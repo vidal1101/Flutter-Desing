@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_desing/routes/routes_page.dart';
 import 'package:app_desing/pages/home_page.dart';
 
 void main() {
@@ -10,10 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: getAplicationsRoutes(),
     );
   }
 }

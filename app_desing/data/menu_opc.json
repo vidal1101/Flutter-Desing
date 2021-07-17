@@ -1,0 +1,18 @@
+{
+    "nombreApp" : "app-desing",
+    "rutas" :[
+        {
+        "ruta": "instagram",
+        "icon": "photo_camera",
+        "texto":"Instagram Clon"
+        },
+        {
+        "ruta": "animated",
+        "icon": "accessibility",
+        "texto":"Animaciónes"
+        }
+
+
+    ]
+
+}
