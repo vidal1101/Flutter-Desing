@@ -2,6 +2,11 @@
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 
+
+/**
+ * 
+ * usado para leer las rutas del json que usaran en la app
+ */
 class MenuProviders {
   List<dynamic> opciones = [];
 
