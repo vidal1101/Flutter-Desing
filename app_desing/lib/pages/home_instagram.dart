@@ -1,3 +1,4 @@
+import 'package:app_desing/widget/instagram_histories.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -36,6 +37,11 @@ class _HomeInstagramState extends State<HomeInstagram> {
   }
 }
 
+
+/**
+ * paginas que muestra en el body de scaffold. 
+ * se hace el scrool de acuerdo al numero de pagina que retorna el navecionalModal
+ */
 class _Paginas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -44,9 +50,7 @@ class _Paginas extends StatelessWidget {
       controller: navegar.pageControler,
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        Container(
-          color: Colors.red,
-        ), //seccion de noticias
+        InstagramHistories(), //seccion de noticias
         Container(
           color: Colors.blue,
         ),
@@ -64,6 +68,11 @@ class _Paginas extends StatelessWidget {
   }
 }
 
+
+/**
+ * la navegación modal se itera de acuerdo a las paginas que exista
+ * 
+ */
 class _Navegacion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
