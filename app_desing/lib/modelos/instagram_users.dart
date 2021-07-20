@@ -1,5 +1,5 @@
-
 /**
+ * clase modelo de usuario
  * 
  * clase para almacenar los usuarios de tipo usuario.
  * recoge en una lista y los almacena. 

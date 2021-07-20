@@ -1,4 +1,4 @@
-import 'package:app_desing/widget/instagram_histories.dart';
+import 'package:app_desing/widget/instagram_body.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
