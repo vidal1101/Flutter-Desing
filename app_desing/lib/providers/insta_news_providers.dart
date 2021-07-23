@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as ht;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 final _URL_NEWS = 'https://newsapi.org/v2';
 final API_KEY = '22d6a70138ee45089387164837697fc3';
 
@@ -19,8 +18,6 @@ class New_Service with ChangeNotifier {
   String _selectedCategoria = 'business';
 
   Map<String, List<Article>> categoriasNews = {};
-
-
 
 /**
  * setter and getters de la categoria seleccionada
@@ -41,7 +38,9 @@ class New_Service with ChangeNotifier {
     final url = "$_URL_NEWS/top-headlines?apiKey=$API_KEY&country=us";
     final response = await ht.get(Uri.parse(url));
     final newRespon = newResponseFromJson(response.body);
+    //print("response: "+newRespon.articles.toString());
     this.headers.addAll(newRespon.articles);
+
     notifyListeners();
   }
 
@@ -54,12 +53,12 @@ class New_Service with ChangeNotifier {
         "$_URL_NEWS/top-headlines?apiKey=$API_KEY&country=us&category=$categoriaSele";
     final response = await ht.get(Uri.parse(url));
     final newRespon = newResponseFromJson(response.body);
-
+    print("response: "+newRespon.articles.toString());
     /**
      * se inicializa cuando se instancia por primera vez la clase,
      * carga las noticias de la categoria seleccionada, 
      */
-    this.categoriasNews[categoriaSele].addAll(newRespon.articles);
+   // this.categoriasNews[categoriaSele].addAll(newRespon.articles);
 /**  
  * al usar patron singleton, esto notifica a todo servidor que hay nuevas peticiones
  */

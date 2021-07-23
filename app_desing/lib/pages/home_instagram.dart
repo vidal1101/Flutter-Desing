@@ -74,6 +74,7 @@ class _Paginas extends StatelessWidget {
         InstagramHistories(), //seccion de noticias
         Container(
           color: Colors.blue,
+          child: Text('trabajar en la busqueda'),
         ),
         Container(
           color: Colors.white30,

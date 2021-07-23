@@ -41,7 +41,7 @@ class Instagram_HistoriesUsers extends StatelessWidget {
         //children: _tarjets(),
         itemCount: this.users.length,
         itemBuilder: (_, i) {
-          //print("1 nombre del page view "+users[i].firstName.toString());
+          print("1 nombre del page view "+users[i].firstName.toString());
           return _tarjeta(_, this.users[i]);
         },
       ),
