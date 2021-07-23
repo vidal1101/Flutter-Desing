@@ -41,7 +41,7 @@ class InstagramProviders {
     final response  = await _proccesingResponse(urlusers);
     this.userinstagram.addAll(response);
     
-    print('response '+response.toString());
+    //print('response '+response.toString());
     userSink(this.userinstagram);
     _cargando = false;
     return response;
@@ -52,9 +52,9 @@ class InstagramProviders {
   Future<List<UserIntagram>> _proccesingResponse(Uri urlusers) async {
     final response  = await http.get(urlusers);
     final decodeData  = json.decode(response.body);
-    print("data de los usuarios: "+decodeData.toString());
+    //print("data de los usuarios: "+decodeData.toString());
     final users = new Users.fromJsonList(decodeData['data']);
-    print('users insta: '+users.userInsta.toString());
+    //print('users insta: '+users.userInsta.toString());
     return users.userInsta ;
   } 
 

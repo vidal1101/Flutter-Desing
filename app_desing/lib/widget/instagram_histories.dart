@@ -14,7 +14,7 @@ class Instagram_HistoriesUsers extends StatelessWidget {
   // evento para saber que acerca al final y cargar mas data y viewportfraccion para la cantidad de pageview 
   //  a mostrar en la pantalla
   final PageController controller =
-      new PageController(initialPage: 1, viewportFraction: 0.2);
+      new PageController(initialPage: 2, viewportFraction: 0.2);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class Instagram_HistoriesUsers extends StatelessWidget {
         //children: _tarjets(),
         itemCount: this.users.length,
         itemBuilder: (_, i) {
-          print("1 nombre del page view "+users[i].firstName.toString());
+          //print("1 nombre del page view "+users[i].firstName.toString());
           return _tarjeta(_, this.users[i]);
         },
       ),
@@ -61,7 +61,7 @@ class Instagram_HistoriesUsers extends StatelessWidget {
               placeholder: NetworkImage('https://suhsport.es/img/noImage.jpg'),
               image: NetworkImage(user.avatar),
               fit: BoxFit.cover,
-              height: 75.0,
+              height: 70.0,
             ),
           ),
           SizedBox(

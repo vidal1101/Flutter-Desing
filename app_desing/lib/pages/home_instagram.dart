@@ -1,6 +1,7 @@
 import 'package:app_desing/widget/instagram_body.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomeInstagram extends StatefulWidget {
   @override
@@ -8,35 +9,55 @@ class HomeInstagram extends StatefulWidget {
 }
 
 class _HomeInstagramState extends State<HomeInstagram> {
+  final _imagePicker = new ImagePicker();
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => _NavegacionModal(),
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Instagram'),
-          actions: <Widget>[
-            Container(
-                padding: EdgeInsets.all(3.0),
-                margin: EdgeInsets.only(right: 5.0),
-                child: Icon(Icons.add_box_outlined)),
-            Container(
-                padding: EdgeInsets.all(3.0),
-                margin: EdgeInsets.only(right: 5.0),
-                child: Icon(Icons.favorite_border)),
-            Container(
-                padding: EdgeInsets.all(3.0),
-                margin: EdgeInsets.only(right: 5.0),
-                child: Icon(Icons.message)),
-          ],
-        ),
+        appBar: appbarHeaders() ,
         body: _Paginas(),
         bottomNavigationBar: _Navegacion(),
       ),
     );
   }
-}
 
+  /**
+   * el appbar de instagram con sus iconos
+   */
+  AppBar appbarHeaders (){
+    return AppBar(
+          title: Text('Instagram'),
+          actions: <Widget>[
+            Container(
+                padding: EdgeInsets.all(3.0),
+                margin: EdgeInsets.only(right: 5.0), //  camara
+                child: GestureDetector(
+                  child: Icon(Icons.add_box_outlined),
+                  onTap: _openCamara,
+                )),
+            Container(
+                padding: EdgeInsets.all(3.0),
+                margin: EdgeInsets.only(right: 5.0), // favoritas y like
+                child: Icon(Icons.favorite_border)),
+            Container(
+                padding: EdgeInsets.all(3.0),
+                margin: EdgeInsets.only(right: 5.0), // mensajeria
+                child: Icon(Icons.message)),
+          ],
+        );
+  }
+
+  /**
+ * metodo para tener acceso a la camra con la libreria de imagePciker
+ */
+  void _openCamara() async {
+    var picture = await this._imagePicker.pickImage(source: ImageSource.camera); 
+    Navigator.pop(context);
+    setState(() {});
+  }
+}
 
 /**
  * paginas que muestra en el body de scaffold. 
@@ -67,7 +88,6 @@ class _Paginas extends StatelessWidget {
     );
   }
 }
-
 
 /**
  * la navegación modal se itera de acuerdo a las paginas que exista
