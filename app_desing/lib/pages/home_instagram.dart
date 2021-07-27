@@ -1,4 +1,5 @@
 import 'package:app_desing/widget/instagram_body.dart';
+import 'package:app_desing/widget/instagram_profile.dart';
 import 'package:app_desing/widget/search_instagram.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -36,15 +37,14 @@ class _Paginas extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         InstagramHistories(), //seccion de noticias
-        InstagramSearch(),
+        InstagramSearch(), // sección de busqueda. 
         Container(
-          color: Colors.white30,
+          color: Colors.blueAccent,
         ),
         Container(
           color: Colors.green,
         ),
-        Container(color: Colors.yellow), //sesion de emcabezados
-        //Container(color: Colors.purpleAccent),
+       InstagramProfile(), //sección del perfil del usuario 
         //
       ],
     );

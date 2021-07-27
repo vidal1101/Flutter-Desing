@@ -33,7 +33,7 @@ class Instagram_HistoriesUsers extends StatelessWidget {
     });
 
     return Container(
-      height: mediaq.height * 0.2,
+      height: 100,
       child: PageView.builder(
         pageSnapping: false, // mayor mobilidad al scrool del pageview.
         scrollDirection: Axis.horizontal,
@@ -61,7 +61,7 @@ class Instagram_HistoriesUsers extends StatelessWidget {
               placeholder: NetworkImage('https://suhsport.es/img/noImage.jpg'),
               image: NetworkImage(user.avatar),
               fit: BoxFit.cover,
-              height: 70.0,
+              height: 60.0,
             ),
           ),
           SizedBox(
