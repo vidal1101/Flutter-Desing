@@ -1,4 +1,5 @@
 import 'package:app_desing/widget/instagram_body.dart';
+import 'package:app_desing/widget/instagram_profile.dart';
 import 'package:app_desing/widget/search_instagram.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +44,7 @@ class _Paginas extends StatelessWidget {
         Container(
           color: Colors.green,
         ),
-        Container(color: Colors.yellow), //sesion de emcabezados
+       InstagramProfile(), //sesion de emcabezados
         //Container(color: Colors.purpleAccent),
         //
       ],
