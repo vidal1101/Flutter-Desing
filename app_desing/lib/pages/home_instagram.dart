@@ -37,15 +37,14 @@ class _Paginas extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         InstagramHistories(), //seccion de noticias
-        InstagramSearch(),
+        InstagramSearch(), // sección de busqueda. 
         Container(
-          color: Colors.white30,
+          color: Colors.blueAccent,
         ),
         Container(
           color: Colors.green,
         ),
-       InstagramProfile(), //sesion de emcabezados
-        //Container(color: Colors.purpleAccent),
+       InstagramProfile(), //sección del perfil del usuario 
         //
       ],
     );
