@@ -15,18 +15,7 @@ class _InstagramShopState extends State<InstagramShop> {
           categoriesShopListHorizontal(context),
           SliverList(
               delegate: SliverChildListDelegate([
-            Container(
-              color: Colors.yellowAccent,
-              height: 200,
-            ),
-            Container(
-              color: Colors.greenAccent,
-              height: 200,
-            ),
-            Container(
-              color: Colors.red,
-              height: 450,
-            ),
+            bodyShop(),
           ])),
         ],
       ),
@@ -99,7 +88,7 @@ class _InstagramShopState extends State<InstagramShop> {
   Widget categoriesShopListHorizontal(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        height: 110.0,
+        height: 50.0,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 8,
@@ -114,6 +103,33 @@ class _InstagramShopState extends State<InstagramShop> {
           },
         ),
       ),
+    );
+  }
+
+  Widget bodyShop() {
+    return GridView.builder(
+      shrinkWrap: true,
+      itemCount: 80,
+      physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 5),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, // cantidad de columnas
+        mainAxisSpacing: 2, //espacio horizontal
+        crossAxisSpacing: 2, //espacio vertical
+        childAspectRatio: 1.0, // tamaño de 0.1 a 1.0  en forma vertical
+      ),
+      itemBuilder: (context, index) {
+        return Container(
+          color: Colors.black87,
+          child: FadeInImage(
+            fadeInDuration: Duration(seconds: 1),
+            placeholder: NetworkImage(
+                'https://www.uh.edu/pharmacy/_images/students/pcol-pceu/no-image-available-2.jpg'),
+            image:
+                NetworkImage('https://picsum.photos/500/300/?image=${index}'),
+          ),
+        );
+      },
     );
   }
 }
