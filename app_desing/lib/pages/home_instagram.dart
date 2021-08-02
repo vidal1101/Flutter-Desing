@@ -1,5 +1,6 @@
 import 'package:app_desing/widget/instagram_body.dart';
 import 'package:app_desing/widget/instagram_profile.dart';
+import 'package:app_desing/widget/instagram_reels.dart';
 import 'package:app_desing/widget/instagram_shop.dart';
 import 'package:app_desing/widget/search_instagram.dart';
 import 'package:flutter/material.dart';
@@ -39,10 +40,8 @@ class _Paginas extends StatelessWidget {
       children: <Widget>[
         InstagramHistories(), //seccion de noticias
         InstagramSearch(), // sección de busqueda.
-        Container(
-          color: Colors.blueAccent,
-        ),
-        InstagramShop(),
+        InstagramReels(), // sección de reesl
+        InstagramShop(), // seccion de tienda de instagram
         InstagramProfile(), //sección del perfil del usuario
         //
       ],
